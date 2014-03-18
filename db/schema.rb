@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140318065705) do
+ActiveRecord::Schema.define(:version => 20140318201253) do
 
-  create_table "r_analytics", :force => true do |t|
+  create_table "trafficlogger_analytics", :force => true do |t|
     t.string   "server_name"
     t.string   "server_port"
     t.text     "server_software"
@@ -35,16 +35,14 @@ ActiveRecord::Schema.define(:version => 20140318065705) do
     t.string   "request_method"
     t.string   "http_connection"
     t.string   "http_version"
-    t.string   "controller_name"
-    t.string   "controller_action_name"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
-  add_index "r_analytics", ["original_full_path"], :name => "index_r_analytics_on_original_full_path"
-  add_index "r_analytics", ["path_info"], :name => "index_r_analytics_on_path_info"
-  add_index "r_analytics", ["request_method"], :name => "index_r_analytics_on_request_method"
-  add_index "r_analytics", ["request_uri"], :name => "index_r_analytics_on_request_uri"
-  add_index "r_analytics", ["server_name"], :name => "index_r_analytics_on_server_name"
+  add_index "trafficlogger_analytics", ["original_full_path"], :name => "index_trafficlogger_analytics_on_original_full_path"
+  add_index "trafficlogger_analytics", ["path_info"], :name => "index_trafficlogger_analytics_on_path_info"
+  add_index "trafficlogger_analytics", ["request_method"], :name => "index_trafficlogger_analytics_on_request_method"
+  add_index "trafficlogger_analytics", ["request_uri"], :name => "index_trafficlogger_analytics_on_request_uri"
+  add_index "trafficlogger_analytics", ["server_name"], :name => "index_trafficlogger_analytics_on_server_name"
 
 end

@@ -1,7 +1,8 @@
-class CreateTableRAnalytics < ActiveRecord::Migration
-  def up
-  	create_table "r_analytics" do |t|
-  		t.string :server_name
+# This migration comes from trafficlogger (originally 20140318181352)
+class CreateTrafficloggerAnalytics < ActiveRecord::Migration
+  def change
+    create_table :trafficlogger_analytics do |t|
+    	t.string :server_name
   		t.string :server_port
   		t.text   :server_software
   		t.string :gateway_interface
@@ -22,18 +23,12 @@ class CreateTableRAnalytics < ActiveRecord::Migration
   		t.string :request_method
   		t.string :http_connection
       t.string :http_version
-      t.string :controller_name
-      t.string :controller_action_name
-  		t.timestamps
-  	end
-    add_index "r_analytics", :server_name
-    add_index "r_analytics", :request_method
-  	add_index "r_analytics", :request_uri
-  	add_index "r_analytics", :path_info
-    add_index "r_analytics", :original_full_path
-  end
-
-  def down
-  	drop_table "r_analytics"
+      t.timestamps
+    end
+    add_index :trafficlogger_analytics, :server_name
+    add_index :trafficlogger_analytics, :request_method
+  	add_index :trafficlogger_analytics, :request_uri
+  	add_index :trafficlogger_analytics, :path_info
+    add_index :trafficlogger_analytics, :original_full_path
   end
 end

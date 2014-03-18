@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'mysql2', '~>0.3.14'
-
+gem 'will_paginate','~>3.0.5'
+gem 'trafficlogger','~>1.0.1'
